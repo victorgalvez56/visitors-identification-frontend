@@ -190,13 +190,10 @@
     methods: {
       async testing () {
         const data = await axios.get('http://www.csjarequipa.gob.pe/sioj/WebServiceKn.php?Id=' + this.dni)
-        // console.log(data.data)
         // eslint-disable-next-line no-eval
         const dataObjetc = eval(data.data)
         const dataJson = (dataObjetc[0])
-        console.log('result ', dataJson)
         this.nombre = dataJson.NOMBRE
-        // console.log(dataJson.NOMBRE)
         this.apellidoPaterno = dataJson.APP
         this.apellidoMaterno = dataJson.APM
         this.sexo = dataJson.sexo
@@ -205,7 +202,6 @@
         this.edad = dataJson.edad
         this.direccion = dataJson.nomb_dire
         this.foto = dataJson.FOTO
-        console.log(dataJson.FOTO)
       },
     },
   }
